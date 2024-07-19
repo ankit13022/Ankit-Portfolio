@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
             <p className="text-xl md:text-3xl">Hey</p>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            I'm Ankit Kumar
+            I&apos;m Ankit Kumar
           </h2>
           <div className="flex flex-row items-start md:items-center gap-1.5 mb-6">
             <h2 className="text-xl md:text-3xl">I am into</h2>
@@ -54,8 +54,9 @@ const Hero: React.FC = () => {
           </div>
           <p className="text-md md:text-lg mb-8">
             I focus on developing user-friendly web applications that meet the
-            client's requirements, with attention to detail, scalability, and
-            performance. Additionally, I am skilled in competitive programming.
+            clients requirements, with attention to detail, scalability, and
+            performance. Additionally, I&lsquo;m skilled in competitive
+            programming.
           </p>
           <div className=" flex text-2xl mb-6 m-2 items-center">
             <FaEnvelope />

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
   name: string;
@@ -283,9 +284,11 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
       transition={{ duration: 0.5 }}
       className="relative flex flex-col items-center gap-4 p-4 bg-sky-950 rounded-lg shadow-md"
     >
-      <img
+      <Image
         src={project.image}
         alt={project.name}
+        width={300}
+        height={200}
         className="w-full object-fill rounded-md mb-4"
         style={{ width: "full", height: "200px" }}
       />

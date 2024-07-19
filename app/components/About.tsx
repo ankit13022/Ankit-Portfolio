@@ -74,11 +74,12 @@ const About: React.FC = () => {
           About me.
         </h3>
         <p className="mb-12 md:text-lg md:w-2/3 w-full">
-          I'm a skilled software developer with experience in TypeScript and
-          JavaScript, and expertise in frameworks like React, Node.js. I'm a
-          quick learner and collaborate closely with clients to create
-          efficient, scalable, and user-friendly solutions that solve real-world
-          problems. Let's work together to bring your ideas to life!
+          I&apos;m a skilled software developer with experience in TypeScript
+          and JavaScript, and expertise in frameworks like React, Node.js.
+          I&apos;m a quick learner and collaborate closely with clients to
+          create efficient, scalable, and user-friendly solutions that solve
+          real-world problems. Let&apos;s work together to bring your ideas to
+          life!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-14">
           {cardsData.map((card, index) => (
