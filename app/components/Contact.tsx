@@ -3,12 +3,11 @@ import { useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.min.css";
 import dotenv from "dotenv";
 dotenv.config();
+
 const Contact = () => {
   const [values, setValues] = useState({
     name: "",
@@ -16,7 +15,6 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,7 +43,6 @@ const Contact = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
-          setSuccess(true);
           setValues({ name: "", email: "", message: "" });
           toast.success("Message sent successfully!");
         },
@@ -68,32 +65,16 @@ const Contact = () => {
     }));
   };
 
-  const { ref: formRef, inView: formInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: imageRef, inView: imageInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <div
       id="contact"
-      className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center"
+      className="min-h-screen w-full bg-gray-900 text-white flex flex-col justify-center items-center p-4 md:p-0"
     >
       <h2 className="text-center text-5xl font-semibold mb-8">Contact Me</h2>
       <ToastContainer />
 
-      <div className="w-full md:w-5/6 mt-10 md:my-16 mx-auto flex justify-between rounded-xl">
-        <motion.div
-          ref={imageRef}
-          initial={{ opacity: 0, x: -100 }}
-          animate={imageInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="hidden md:block w-1/2 h-full"
-        >
+      <div className="w-full md:w-5/6 mt-10 md:my-16 mx-auto flex flex-col md:flex-row justify-between rounded-xl gap-8">
+        <div className="hidden md:block w-full md:w-1/2 h-full">
           <Image
             unoptimized={true}
             quality={100}
@@ -101,15 +82,10 @@ const Contact = () => {
             src="/contact1.png"
             width={1000}
             height={1000}
+            className="rounded-lg"
           />
-        </motion.div>
-        <motion.div
-          ref={formRef}
-          initial={{ opacity: 0, x: 100 }}
-          animate={formInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="flex-1 mx-6"
-        >
+        </div>
+        <div className="flex-1 mx-6">
           <h3 className="text-2xl mb-4">Get in touch</h3>
           <p className="text-gray-400 mb-6 text-sm md:text-base">
             My inbox is always open! Whether you&apos;ve got a burning question
@@ -121,7 +97,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="flex flex-col gap-5 rounded-xl"
           >
-            <motion.input
+            <input
               onChange={handleChange}
               required
               value={values.name}
@@ -129,11 +105,8 @@ const Contact = () => {
               type="text"
               placeholder="Full Name *"
               className="outline-none bg-gray-800 placeholder-gray-400 rounded-lg py-3 px-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.2 }}
             />
-            <motion.input
+            <input
               onChange={handleChange}
               required
               value={values.email}
@@ -141,11 +114,8 @@ const Contact = () => {
               type="email"
               placeholder="Email *"
               className="outline-none bg-gray-800 placeholder-gray-400 rounded-lg py-3 px-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 }}
             />
-            <motion.textarea
+            <textarea
               onChange={handleChange}
               required
               value={values.message}
@@ -153,16 +123,10 @@ const Contact = () => {
               rows={4}
               placeholder="Message *"
               className="outline-none resize-none bg-gray-800 placeholder-gray-400 rounded-lg py-3 px-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.6 }}
             />
-            <motion.button
+            <button
               disabled={loading}
               className="px-4 py-2 bg-violet-600 hover:bg-violet-700 transition-colors text-white rounded-lg disabled:cursor-not-allowed self-end"
-              initial={{ opacity: 0, y: 50 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.8 }}
             >
               {loading ? (
                 <span className="flex items-center gap-2">
@@ -171,9 +135,9 @@ const Contact = () => {
               ) : (
                 "Say Hello 👋"
               )}
-            </motion.button>
+            </button>
           </form>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

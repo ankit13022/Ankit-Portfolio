@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
             I&apos;m Ankit Kumar
           </h2>
           <div className="flex flex-row items-start md:items-center gap-1.5 mb-6">
-            <h2 className="text-xl md:text-3xl">I am into</h2>
-            <div className="ml-2 text-violet-700 dark:text-violet-600 text-xl md:text-3xl font-medium">
+            <h2 className="text-lg md:text-3xl">I am into</h2>
+            <div className="ml-2 text-violet-700 dark:text-violet-600 text-lg md:text-3xl font-medium">
               <TypeAnimation
                 sequence={[
                   "Backend development",
