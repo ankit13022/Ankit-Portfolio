@@ -6,12 +6,12 @@ import ExperienceCard from "../components/ExperienceCard";
 const workExperienceData = [
   {
     role: "Fullstack Developer",
-    company: "Marqstats",
+    company: "Marqstat Intelligence Private Limited",
     duration: "April 2024 - July 2024",
     description: [
       "Enhanced website functionality and efficiency, improving user experience and performance.",
-      "Developed and maintained a comprehensive admin dashboard, streamlining operational workflows and increasing productivity.",
-      "Leveraged TypeScript to improve code quality and maintainability, and integrated PDF.js for seamless PDF viewing and manipulation within the web application.",
+      "Architected and maintained a robust admin dashboard leveraging Chart.js and Rough.js, streamlining workflows.",
+      " Enhanced reporting speed by 40 percent and reduced manual data entry errors by 25 percent across the organization.",
       " Utilized Next.js for server-rendered applications, optimizing performance and SEO, while implementing responsive designs with Tailwind CSS for a consistent user interface across devices.",
     ],
     icon: <FaBriefcase />,
