@@ -20,23 +20,23 @@ type FadeInParams = {
 // Card data
 const cardsData: CardData[] = [
   {
-    title: "Backend Developer",
-    imgSrc: "/web.png",
+    title: "MERN Stack Developer",
+    imgSrc: "/mern.png",
     alt: "Web Developer",
   },
   {
-    title: "Frontend Developer",
-    imgSrc: "/mobile.png",
+    title: "Software Developer",
+    imgSrc: "/software.png",
     alt: "React Native Developer",
   },
   {
-    title: "Fullstack Developer",
-    imgSrc: "/backend.png",
+    title: "Full Stack Developer",
+    imgSrc: "/fullstack.png",
     alt: "Backend Developer",
   },
   {
     title: "Competitive programmer",
-    imgSrc: "/creator.png",
+    imgSrc: "/cp.png",
     alt: "Content Creator",
   },
 ];
@@ -113,9 +113,9 @@ const Card: React.FC<{ card: CardData; index: number }> = ({ card, index }) => {
       <img
         src={card.imgSrc}
         alt={card.alt}
-        height={60}
-        width={60}
-        className="mx-auto my-8"
+        height={96}
+        width={96}
+        className="mx-auto my-8 rounded-full"
       />
       <h4 className="font-semibold text-xl my-8 mt-12">{card.title}</h4>
     </motion.div>
