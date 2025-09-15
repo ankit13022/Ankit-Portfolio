@@ -108,7 +108,8 @@ const Card: React.FC<{ card: CardData; index: number }> = ({ card, index }) => {
       })}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className="bg-indigo-950 p-6 rounded-lg my-4 text-center border-2 border-indigo-700 shadow-md shadow-teal-500"
+      className="bg-[#1a2847] p-6 rounded-xl my-4 text-center border border-violet-900 shadow-lg shadow-sky-500/20 
+             hover:scale-105 hover:shadow-sky-400/30 "
     >
       <img
         src={card.imgSrc}

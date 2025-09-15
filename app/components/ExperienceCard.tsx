@@ -40,7 +40,7 @@ const ExperienceCard: React.FC<CardProps> = ({
       transition={{ duration: 0.5 }}
       className="flex flex-col justify-center items-center w-full"
     >
-      <div className="w-5/6 md:w-2/3 p-12 text-center bg-indigo-950 rounded-lg shadow-teal-600 shadow-lg border-2 border-indigo-600">
+      <div className="w-5/6 md:w-2/3 p-12 text-center bg-[#1a2847] rounded-lg border border-violet-900 shadow-lg shadow-sky-800">
         <div className="flex flex-col items-center justify-center mb-4">
           <div
             className={`w-12 h-12 rounded-full flex items-center justify-center ${iconBg} text-white`}

@@ -28,7 +28,7 @@ const Header: React.FC = () => {
         <div className="flex gap-4 md:gap-8 justify-between items-center my-1 w-full md:w-auto">
           <Link
             href="#home"
-            className="bg-red-600 h-10 w-10 flex items-center justify-center rounded-full"
+            className="bg-yellow-600 h-10 w-10 flex items-center justify-center rounded-full"
           >
             <span className="text-white text-lg font-bold">A</span>
           </Link>
